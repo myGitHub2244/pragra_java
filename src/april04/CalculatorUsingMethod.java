@@ -2,10 +2,10 @@ package april04;
 
 import java.util.Scanner;
 
-public class CalculatorLoopMethod {
+public class CalculatorUsingMethod {
     double firstNum;
     double secondNum;
-    int inputOper;
+    int inputOperation;
     double outPut;
     char contSwitch;
 
@@ -21,7 +21,7 @@ public class CalculatorLoopMethod {
     }
 
     public void getInput(Scanner sc){
-         inputOper = sc.nextInt();
+         inputOperation = sc.nextInt();
     }
     public void getFirstNum(Scanner sc){
         System.out.println("Please enter first number:");
@@ -32,7 +32,7 @@ public class CalculatorLoopMethod {
         secondNum = sc.nextDouble();
     }
     public void performCalc(Scanner sc){
-        switch(inputOper){
+        switch(inputOperation){
             case 1:
                 getFirstNum(sc);
                 getSecondNum(sc);
@@ -72,7 +72,7 @@ public class CalculatorLoopMethod {
     }
     public void checkContinue(Scanner sc){
         contSwitch='N';
-        if(inputOper!=0) {
+        if(inputOperation !=0) {
             System.out.println("Do you want to continue? Press \"Y\" for Yes or \"N\" for No");
             contSwitch = sc.next().charAt(0);
 
@@ -89,7 +89,7 @@ public class CalculatorLoopMethod {
     public static void main(String[] args) {
 
         Scanner sc=new Scanner(System.in);
-        CalculatorLoopMethod cal=new CalculatorLoopMethod();
+        CalculatorUsingMethod cal=new CalculatorUsingMethod();
 
         do{
             cal.printMenu();
