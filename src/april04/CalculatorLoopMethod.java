@@ -7,6 +7,7 @@ public class CalculatorLoopMethod {
     double secondNum;
     int inputOper;
     double outPut;
+    char contSwitch;
 
     public void printMenu(){
             System.out.println("Welcome to my Calculator !");
@@ -15,7 +16,7 @@ public class CalculatorLoopMethod {
             System.out.println("    Press 3 for Subtraction");
             System.out.println("    Press 4 for Division");
             System.out.println("    Press 5 for Modulus");
-            System.out.println("    Press 0 for None");
+            System.out.println("    Press 0 for Exit");
             System.out.print("Enter your choice of Arithmetic Operation: ");
     }
 
@@ -63,23 +64,25 @@ public class CalculatorLoopMethod {
                 System.out.println("Modulus of "+firstNum+ " and "+secondNum+ " is: " + outPut);
                 break;
             case 0:
-                System.out.println("None selected");
+                System.out.println("Exit option selected");
                 break;
             default:
-                System.out.println("Invalid Option selected!");
+                System.out.println("Invalid Option selected. Please Retry!");
         }
     }
+    public void checkContinue(Scanner sc){
+        contSwitch='N';
+        if(inputOper!=0) {
+            System.out.println("Do you want to continue? Press \"Y\" for Yes or \"N\" for No");
+            contSwitch = sc.next().charAt(0);
 
-    public char checkContinue(Scanner sc){
-        char contSwitch;
-        System.out.println("Do you want to continue? Press \"Y\" for Yes or \"N\" for No");
-        contSwitch=sc.next().charAt(0);
-
-        while(contSwitch!='y' && contSwitch!='Y' && contSwitch!='n' && contSwitch!='N') {
-            System.out.println("Invalid Entry. Please press \"Y\" for yes or \"N\" for No");
-            contSwitch=sc.next().charAt(0);
+            while (contSwitch != 'y' && contSwitch != 'Y' && contSwitch != 'n' && contSwitch != 'N') {
+                System.out.println("Invalid Entry. Please press \"Y\" for yes or \"N\" for No");
+                contSwitch = sc.next().charAt(0);
+            }
         }
-        return contSwitch;
+        if(contSwitch=='N'||contSwitch=='n')
+            System.out.println("Calculator is exiting. Thank you! ");
     }
 
 
@@ -87,16 +90,14 @@ public class CalculatorLoopMethod {
 
         Scanner sc=new Scanner(System.in);
         CalculatorLoopMethod cal=new CalculatorLoopMethod();
-        char contSwitch;
 
         do{
             cal.printMenu();
             cal.getInput(sc);
             cal.performCalc(sc);
-            contSwitch=cal.checkContinue(sc);
-        }while(contSwitch=='y'||contSwitch=='Y');
+            cal.checkContinue(sc);
+        }while(cal.contSwitch=='y'||cal.contSwitch=='Y');
 
-        System.out.println("Calculator is exiting. Thank you! ");
         sc.close();
     }
 }
