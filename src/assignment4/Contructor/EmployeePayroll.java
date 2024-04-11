@@ -28,8 +28,7 @@ public class EmployeePayroll {
     }
 
     public double netSalary(){              //Net Salary = Gross Salary - Deductions
-        double netSalary = grossSalary()-deductions();
-        return netSalary;
+        return grossSalary()-deductions();
     }
 
     public static void main(String[] args) {
