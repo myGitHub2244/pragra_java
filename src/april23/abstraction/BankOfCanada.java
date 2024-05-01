@@ -6,5 +6,7 @@ public abstract class BankOfCanada {
 
     public abstract void rateofInterest();
 
+//    public static abstract void getRate();    Abstract Methods cannot be static !
+
 
 }

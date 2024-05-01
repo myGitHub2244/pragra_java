@@ -1,3 +1,10 @@
+/*
+Write a Java program that takes a sentence as input and reverses the order of words in it. A word is defined as a sequence of non-space characters. The program should maintain the order of characters within each word.
+For example:
+Input: "Hello World" Output: "World Hello"
+Input: "Java Programming is Fun" Output: "Fun is Programming Java"
+ */
+
 package assignment5.arrayandstring;
 
 import java.util.Scanner;
