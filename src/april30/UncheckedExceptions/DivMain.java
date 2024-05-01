@@ -4,7 +4,15 @@ import java.util.Scanner;
 
 public class DivMain {
     public static void main(String[] args) {
-        
+
+        /*
+        Unchecked Exceptions
+        An unchecked exception is an exception that occurs at the time of execution. These are also called as Runtime Exceptions.
+        These include programming bugs, such as logic errors or improper use of an API.
+        Runtime exceptions are ignored at the time of compilation and occur at Runtime if situation arise and program terminates abruptly.
+        We can put that code within Try-Catch block so that meaningful error message is displayed and execution can continue after Catch
+         */
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the first Number ");
         int num1 = scanner.nextInt();
