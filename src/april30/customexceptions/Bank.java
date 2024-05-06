@@ -29,7 +29,7 @@ public class Bank {
             // throws
 
             //int x = 10/0;
-            try {
+            try {       //when we "throw" we have to provide try-catch block OR add throws to method else it gives error "Unhandled exception: assignment.exceptionhandling.InvalidAgeException"
                 throw new InsufficientBalanceException("Insufficient Balance exception");
             }
             catch (Exception  e) {
