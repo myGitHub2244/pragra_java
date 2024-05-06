@@ -2,7 +2,7 @@ package april30.UncheckedExceptions;
 
 import java.util.Scanner;
 
-public class DivMain {
+public class ArithmeticExceptionDemo {
     public static void main(String[] args) {
 
         /*
@@ -25,7 +25,7 @@ public class DivMain {
             System.out.println("Not useful");
         }
 
-        catch (java.lang.NullPointerException e) {
+        catch (java.lang.NullPointerException e) {  //Skipped
             System.out.println(e);
         }
         catch (ArithmeticException e) {
@@ -41,6 +41,3 @@ public class DivMain {
 
     }
 }
-
-// 5 -10
-// NullPointer , ArrayOutOfBound exception

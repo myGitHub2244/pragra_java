@@ -21,7 +21,8 @@ public class PostandPreIncrement {
 
 
         System.out.println("h = " + h);
-        h = h++;        //IMPORTANT: suffix ++ will first use h to assign. Looks like it will discard ++
+        g = h++;        //IMPORTANT: suffix ++ will first use h to assign and then increement
+        System.out.println("g = " + g);
         System.out.println("h = " + h);
 
 

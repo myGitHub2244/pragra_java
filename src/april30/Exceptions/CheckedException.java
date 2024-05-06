@@ -24,8 +24,10 @@ public class CheckedException {
 
         try {
             Scanner scanner = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (FileNotFoundException e) {         //Checked Exception. Meaning Compile mandates this
+            System.out.println("File not found");
+            e.printStackTrace();
+            throw new RuntimeException(e);  //throw additional exception Runtime Exception passing same object e
         }
 
 
