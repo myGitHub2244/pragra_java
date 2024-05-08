@@ -1,4 +1,4 @@
-package may4.Generics;
+package may04.Generics;
 
 public final class Student {
 

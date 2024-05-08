@@ -1,4 +1,4 @@
-package april30.UncheckedExceptions;
+package april30.Exceptions.UncheckedExceptions;
 
 public class NullPointerException {
 

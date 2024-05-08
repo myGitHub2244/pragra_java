@@ -9,36 +9,25 @@ public class Throw {
         String s = null;
 
         try {
+            System.out.println("Inside Try block");
             scanner = new Scanner(System.in);
             String upperCase = s.toUpperCase();
-            System.out.println("Somnething..");
-        } catch (ArithmeticException e) {
-            throw new RuntimeException(e);
+            System.out.println("Something..THIS WILL NOT PRINT");
+        }
+        catch (NullPointerException e) {        //Note: Catch block is not mandatory. No errors if omitted. Try it out !
+            System.out.println("Inside Catch block");
+            e.printStackTrace();
+            throw new RuntimeException(e);  //this will throw additional exception manually. In this case only finally is executed
         }
         finally {
-
+            // connection sql, opened file,
             System.out.println("It will execute always.");
             scanner.close();
         }
-
-        // connection sql, opened file,
-
-        scanner.close();
+        System.out.println("Processing Ends");  //this won't print if "throw" is executed. Comment out "throw" and see it will print !
 
         // try with resources..
 
     }
 }
-// Ask user to enter the age...
-//
-// 16 -- InvalidAgeException.
-//  16-18 --- you eligible to learn dribing
-// 18 -- okay
-
-
-// Ask user to enter the age...  Vote...
-//
-// 16 -- InvalidAgeException.
-//  16-18 --- you eligible to learn dribing
-// 18 -- okay
 

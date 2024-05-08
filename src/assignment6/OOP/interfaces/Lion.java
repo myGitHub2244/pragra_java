@@ -1,6 +1,6 @@
 package assignment6.OOP.interfaces;
 
-public class Lion implements Climable{
+public class Lion implements Climable {
     @Override
     public void climb() {
         System.out.println("Can climb");

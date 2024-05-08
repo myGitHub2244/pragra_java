@@ -1,8 +1,8 @@
-package april30.UncheckedExceptions;
+package april30.Exceptions;
 
 import java.util.Scanner;
 
-public class ArithmeticExceptionDemo {
+public class TryCatchBlock {
     public static void main(String[] args) {
 
         /*
@@ -22,17 +22,23 @@ public class ArithmeticExceptionDemo {
         int result = 0;
         try {
              result = num1 / num2;
-            System.out.println("Not useful");
+            System.out.println("Result before correction: "+result);    //this won't execute if num2 is '0'
         }
 
         catch (java.lang.NullPointerException e) {  //Skipped
             System.out.println(e);
         }
+        
         catch (ArithmeticException e) {
             System.out.println(e);
+            System.out.println("num2 entered is 0. below code to replace it will 1 ");
+            //Write code to correct the error and continue processing !
+            num2=1;
+            result=num1/num2;
+            System.out.println("result after correction: "+result);
         }
-        catch (Exception e) {
 
+        catch (Exception e) {   //Skipped
             System.out.println(e);
         }
 
