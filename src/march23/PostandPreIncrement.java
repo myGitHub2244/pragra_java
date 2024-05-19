@@ -4,7 +4,7 @@ public class PostandPreIncrement {
 
     public static void main(String args[]){
         int g = 5;
-        int h = 2* ++g;     //prefix ++ will first increment g by 1 (i.e. 6) and then use in  multiply operation
+        int h = 2* ++g + g;     //prefix ++ will first increment g by 1 (i.e. 6) and then use in  multiply operation
         System.out.println("g = " + g);
         System.out.println("h = " + h);
 

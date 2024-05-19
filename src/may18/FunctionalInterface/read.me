@@ -1,0 +1,15 @@
+#Functional Interface:
+
+Strictly 1 abstract class -> Purpose is to have only 1 Function that can be implemented in child classes.
+Can also have default method (with concrete code) and static methods
+All instance variables are public static final
+
+Lambda:
+Child class when implement Interface, then it must implement that 1 abstract method
+Since there is only 1 abstract method, we use Lambda expression to override that abstract method
+for e.g.
+abstract method:
+int addFunc(int a, int b);
+
+Lambda implementation:
+(a,b)->a+b;

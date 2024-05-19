@@ -1,8 +1,9 @@
-package may07;
+package may07.collections;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.TreeSet;
 
 public class Test {
 
@@ -25,5 +26,6 @@ public class Test {
             Integer next=iterator.next();
             System.out.println(next);
         }
-    }
+
+     }
 }

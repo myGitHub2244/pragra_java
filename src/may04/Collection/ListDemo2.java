@@ -8,7 +8,7 @@ public class ListDemo2 {
     public static void main(String[] args) {
 
         List<Integer> list1=new ArrayList<>();
-        list1.add(10);list1.add(20);list1.add(30);list1.add(10);
+        list1.add(10);list1.add(20);list1.add(30);list1.add(10); //elements are added in order of addition
         System.out.println("Size: "+list1.size());
         System.out.println("list1 = " + list1);
 
@@ -20,7 +20,7 @@ public class ListDemo2 {
         System.out.println("Size: "+list1.size());
         System.out.println("list1 = " + list1);
 
-
+        System.out.println("list1.get(2) = " + list1.get(2));
         System.out.println("list1.contains(40) = " + list1.contains(40));
         System.out.println("list1.hashCode() = " + list1.hashCode());
         System.out.println("list1.isEmpty() = " + list1.isEmpty());

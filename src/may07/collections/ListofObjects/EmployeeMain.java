@@ -1,4 +1,4 @@
-package may07.ListofObjects;
+package may07.collections.ListofObjects;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,6 +34,7 @@ public class EmployeeMain {
 
         while(iterator.hasNext()){
             if(iterator.next().age>35)
+                //the 2nd next() method below will traverse to next element. THis won't work. Need to know how to retrieve email of prior element that has age>35
                 System.out.println("Name: "+iterator.next().email);
         }
 

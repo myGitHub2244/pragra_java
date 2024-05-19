@@ -1,4 +1,4 @@
-package may07.ListofObjects;
+package may07.collections.ListofObjects;
 
 public class Employee {
 
