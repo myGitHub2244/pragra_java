@@ -7,3 +7,95 @@
 3. To understand Big O Notation
     https://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/
 
+4. hashCode() method: It is used to get the hash code of an object. hashCode() method of the object class returns
+   the memory reference of an object in integer form. Definition of hashCode() method is public native hashCode(). It indicates
+   the implementation of hashCode() is native because there is not any direct method in java to fetch the reference of the object.
+   -> If we create new object then the hashcode() will be assigned to that memory location. If we update any instance variables contained
+      in that object, but since it still stays at same memory location the hashcode of the object is also the same !
+   -> If we create 2 objects of same class and with same values but since these 2 objects are separate they are stored at 2
+      different memory location, hence have 2 different hashcodes. The ==, equals will return false and hashcode() gives 2 values.
+
+5. equals and hashcode method overrides:
+    Default: equals method compares if 2 object references (stack) point to same objects (heap) and same memory location.
+             It is defined in Object class and uses '==' operator to compare.
+             this method returns true if and only if x and y refer to the same object and x == y
+              It returns false 2 objects even if they hv equal values
+             Similarly, hashCode() method of the object class returns the memory reference of an object in integer form.
+             Since 2 objects have 2 different memory location irrespective of their values, they have distinct hashcodes !
+    If we override the equals method (as in String class), to return true based on Object's values and not based on if it points
+    to same object, which basically overrides to say 2 objects with equal values are also equal. In that case
+    if we still use Object class native hashcode() method, then  it will return 2 hashcodes which means 2 objects
+    are distinct, hence we MUST override the hashcode() to calc hashcode based on Object values and not memory location
+    That way equals and hashcode will be aligned and does not cause unexpected code behaviour !
+
+
+6. HashMap -> get(Object key) method
+
+    /**
+     * Returns the value to which the specified key is mapped,
+     * or {@code null} if this map contains no mapping for the key.
+     *
+     * <p>More formally, if this map contains a mapping from a key
+     * {@code k} to a value {@code v} such that {@code (key==null ? k==null :
+     * key.equals(k))}, then this method returns {@code v}; otherwise
+     * it returns {@code null}.  (There can be at most one such mapping.)
+     *
+     * <p>A return value of {@code null} does not <i>necessarily</i>
+     * indicate that the map contains no mapping for the key; it's also
+     * possible that the map explicitly maps the key to {@code null}.
+     * The {@link #containsKey containsKey} operation may be used to
+     * distinguish these two cases.
+     *
+     * @see #put(Object, Object)
+     */
+    public V get(Object key) {
+        Node<K,V> e;
+        return (e = getNode(key)) == null ? null : e.value;
+    }
+
+    /**
+     * Implements Map.get and related methods.
+     *
+     * @param key the key
+     * @return the node, or null if none
+     */
+    final Node<K,V> getNode(Object key) {
+        Node<K,V>[] tab; Node<K,V> first, e; int n, hash; K k;
+        if ((tab = table) != null && (n = tab.length) > 0 &&
+            (first = tab[(n - 1) & (hash = hash(key))]) != null) {
+            if (first.hash == hash && // always check first node
+                ((k = first.key) == key || (key != null && key.equals(k))))
+                return first;
+            if ((e = first.next) != null) {
+                if (first instanceof TreeNode)
+                    return ((TreeNode<K,V>)first).getTreeNode(hash, key);
+                do {
+                    if (e.hash == hash &&
+                        ((k = e.key) == key || (key != null && key.equals(k))))
+                        return e;
+                } while ((e = e.next) != null);
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Computes key.hashCode() and spreads (XORs) higher bits of hash
+     * to lower.  Because the table uses power-of-two masking, sets of
+     * hashes that vary only in bits above the current mask will
+     * always collide. (Among known examples are sets of Float keys
+     * holding consecutive whole numbers in small tables.)  So we
+     * apply a transform that spreads the impact of higher bits
+     * downward. There is a tradeoff between speed, utility, and
+     * quality of bit-spreading. Because many common sets of hashes
+     * are already reasonably distributed (so don't benefit from
+     * spreading), and because we use trees to handle large sets of
+     * collisions in bins, we just XOR some shifted bits in the
+     * cheapest possible way to reduce systematic lossage, as well as
+     * to incorporate impact of the highest bits that would otherwise
+     * never be used in index calculations because of table bounds.
+     */
+    static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    }

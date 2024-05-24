@@ -1,0 +1,73 @@
+https://www.baeldung.com/java-custom-class-map-key
+https://howtodoinjava.com/java/collections/hashmap/design-good-key-for-hashmap/#:~:text=We%20should%20Make%20the%20HashMap's%20Key%20Immutable&text=Immutability%20ensures%20that%20we%20will,and%20equals()%20methods%20contract.
+
+1. The Key should Honor the Contract between hashCode() and equals()
+    Overriding the the hashCode() is generally necessary whenever equals() is overridden to maintain the general
+    for the hashCode() method, which states that equal objects must have equal hash codes.
+
+
+2. What if Changing the Key’s HashCode is Allowed?
+    Once hashCode() override is done, the hashcode of Key of the HashMap will be calculated using the override formula involving Instance
+    variables of the Custom Key Object always returning exact same hashcode for exact same Key value no matter these 2 different objects.
+
+    Now if we change any attribute in that object, obviously the hashcode will change as well since calc of hashcode involves
+    that instance variable. Hence, ee should Make the HashMap’s Key Immutable
+
+3. We should Make the HashMap’s Key Immutable
+    For the above basic reasoning, key objects are suggested to be immutable. Immutability ensures that we will get the
+    same hashcode every time, for a key object. So it actually solves almost all the problems in one go. But, again, such a class must honor the hashCode() and equals() methods contract.
+
+    This is the main reason why immutable classes like String, Integer or other wrapper classes are a good key object candidate.
+    and it is the answer to the question of why string is a popular hashmap key in java?
+
+    But remember that immutability is recommended and not mandatory. If you want to make a mutable object as a key in the hashmap,
+    then you have to make sure that the state change for the key object does not change the hashcode of the object. This can be done by overriding the hashCode() method. But, you must make sure you are honoring the contract with equals() also.
+
+    BASICALLY: Do not change the hash code of an object while the object is being used as a key.
+
+4. Why Immutable classes should use as a keys is HashMap?
+    HashMap is work with key-value pairs and when we put() data in HashMap it generates the HashMap based on state of the key.
+    state means the data which available inside that particular key. using that data HashMap generate hashcode and use that hashcode
+     as a index value.
+
+    In next operation when we want to read that particular HashMap data get() method again generate hashcode with given parameter.
+    in this case also state of that key object is use to generate hashcode and find data using that hashcode as a index value.
+    So twist here is state of that particular key should not be change at the time of put() and get() operation then only HashMap
+    will generate same hashcode for get() and put() operation. so this means your HashMap key should be Immutable and no one should4
+     change state of that key.
+    It is recommended that HashMap use "String" key type when possible. So the reason behind this recommendation is String is
+    Immutable class. defined as a final and fields also final, no setters only getters and public constructors.
+
+5. Why Wrapper classes also we use as a keys in HashMap?
+   Wrapper classes are Immutable by default so like String they are also given same benefit when we use them as a Key in HashMap.
+
+   Wrapper classes are immutable because they represent the primitive's and primitive's should not change there state anyway.
+
+6. How To Create an Immutable Class in Java
+    https://www.digitalocean.com/community/tutorials/how-to-create-immutable-class-in-java
+   An object is immutable when its state doesn’t change after it has been initialized. For example, String is an immutable class
+    and, once instantiated, the value of a String object never changes.
+
+    Because an immutable object can’t be updated, programs need to create a new object for every change of state. However, immutable
+     objects also have the following benefits:
+
+    An immutable class is good for caching purposes because you don’t have to worry about the value changes.
+    An immutable class is inherently thread-safe, so you don’t have to worry about thread safety in multi-threaded environments.
+
+
+To create an immutable class in Java, you need to follow these general principles:
+---------------------------------------------------------------------------------------
+Declare the class as final so it can’t be extended.
+Make all of the fields private so that direct access is not allowed.
+Don’t provide setter methods for variables.
+Make all mutable fields final so that a field’s value can be assigned only once.
+Initialize all fields using a constructor method performing deep copy.
+Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference.
+
+What happens when you don’t use deep copy and cloning
+----------------------------------------------------------
+when you use shallow copy instead of deep copy and return the object insetad of a copy. The object is no longer immutable and
+can be changed.
+
+
+
