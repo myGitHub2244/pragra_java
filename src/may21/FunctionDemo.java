@@ -17,7 +17,7 @@ public class FunctionDemo {
 
             /*
         Above Lambda expression is short form of below implementation:
-        Function<Integer> cons = new Consumer<>{            --> Anonymous class
+        Function<String> cons = new Consumer<>{            --> Anonymous class
             public String apply(StudentClass stu){          --> Override the abstract method: R apply(T t)
                 return stu.firstname;
             }
