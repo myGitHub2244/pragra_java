@@ -17,7 +17,7 @@ public class NullPointerException {
             System.out.println("Inside Finally Block");
         }
 
-        System.out.println("End of code");
+        System.out.println("End of code");  //this code executes because exception has been handled !
 
 
     }

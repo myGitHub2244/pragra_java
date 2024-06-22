@@ -10,7 +10,7 @@ public class ConsumerDemo {
 
 //  Use Consumer interface implemented function accept() to print the given input:
         int i=112;
-        cons.accept(i);
+        cons.accept(i);     //basically accept(i) method is implemented as System.out.println(i)
 
 //  Use Consumer interface implemented function accept() to print elements of ArrayList:
         List<Integer> list = Arrays.asList(11,22,33,44);
