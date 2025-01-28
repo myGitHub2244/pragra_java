@@ -8,7 +8,7 @@ public class FoodMain {
         food1.prepareFood();    //Can use Obj reference of Parent-Parent Interface class to call methods of Interfaces
         food1.buyGroceries();
 //        food1.addIndianspices();          --> Cannot call methods of Child-Child class using Parent-Parent Interface Obj Reference
-//        food1.addChineseSpices();
+//        food1.addChineseSpices();             basically methods which are only present in child class and not parent class/interface
 
         IndoChineseFood indoChinese = new IndoChineseFood();
         indoChinese.cleanFood();

@@ -8,6 +8,8 @@ public interface IndianFood extends Food {
     void prepareFood();         //same method as parent Food Interface
     void addIndianspices();
 
-
+    default int numberSpices(){
+        return 5;
+    }
 
 }

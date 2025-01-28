@@ -20,6 +20,12 @@ public class IndoChineseFood extends CleanFood implements IndianFood,ChineseFood
     @Override
     public void addIndianspices() {
         System.out.println("Add Indian Spices");
-
     }
+
+    @Override
+    public int numberSpices(){
+        return 8;
+    }
+
+
 }
