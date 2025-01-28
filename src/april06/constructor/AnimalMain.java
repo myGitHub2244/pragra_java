@@ -9,6 +9,7 @@ public class AnimalMain {
         //      create default constructor in this case because there is a parameterized constructor is present in Animal
 
         ani=new Animal(20,"green",4,false);//Call default constructor by not passing 4 arguments
+        ani.Animal();
 
     }
 

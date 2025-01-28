@@ -57,6 +57,7 @@ public class StreamDemo {
         System.out.println("Print Array of String");
         List<String> names = List.of("Arun","Vivek","John","Arun","Robert","Steve");
 
+        System.out.println("2 ways to create Streams:");
         Stream.of(names).forEach(n-> System.out.println(n));
         names.stream().forEach(n-> System.out.println(n));
 
