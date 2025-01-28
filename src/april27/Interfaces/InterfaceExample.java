@@ -2,7 +2,7 @@ package april27.Interfaces;
 
 public interface InterfaceExample {
 
-//  int x;          // Variables must be public static final. Cannot have instance variables
+//  int x;          // Variables must be public static final. Cannot have instance variables. And MUST be initialized !
     int x=1;        // No need to mention public static final exclusively, it is implied as long as field is initialized
 
     //public abstract is greyed out meaning it is default/implied hence can be omitted

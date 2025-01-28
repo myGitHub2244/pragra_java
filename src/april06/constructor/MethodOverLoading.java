@@ -10,8 +10,8 @@ public class MethodOverLoading {
     Java supports method overloading through two mechanisms:
         By changing the number of parameters
         By changing the data type of parameters
-        Note: Same method name, same type and number of parameters but a different return type is not allowed & is not overloading
-
+        Note: Same method name, same type and number of parameters but a different return type is not allowed & is also not overloading
+                                                                                               --------------
      */
 
     // Overloaded sum(). This sum takes two int parameters
@@ -24,7 +24,7 @@ public class MethodOverLoading {
         return (x + y + z);
     }
 
-    // Overloaded sum(). This sum also takes two parameters but different data type
+    // Overloaded sum(). This sum also takes two parameters but different data type and also different return type
     public double sum(double x, double y){
         return (x + y);
     }
@@ -34,6 +34,7 @@ public class MethodOverLoading {
 //        int z = 10;
 //        return (z);
 //    }
+
 
     public static void main(String args[])
     {

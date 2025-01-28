@@ -20,6 +20,10 @@ class Not_Final {          //final class cannot be extended
         System.out.println("Test Final method");
     }
 
+    //Main method can be made Final, but now the child class cannot override or have another main method !
+    public static final void main(String[] args) {
+        System.out.println("Inside Parent class Main method");
+    }
 }
 
 class Child extends Not_Final{
@@ -27,6 +31,12 @@ class Child extends Not_Final{
 
 //    public void test() {
 //        System.out.println("Final method cannot be overridden");
+//    }
+
+    //child class cannot have another main method because it was final in parent class. remove final and it allows !
+    //-------------------------------------------------------------------------------------------------------//
+//    public static void main(String[] args) {
+//        System.out.println("Inside Child class Main method");
 //    }
 }
 

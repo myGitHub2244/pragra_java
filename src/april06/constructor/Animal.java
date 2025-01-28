@@ -31,7 +31,7 @@ public class Animal {
         System.out.println("tail = " + tail);           //This will have default boolean value = false
     }
 
-    void Animal(){          //the moment we add a return type, this becomes a method and not Constructor !!
+    void Animal(){          //the moment we add a return type (even void!), this becomes a method and not Constructor !!
         System.out.println("This is not a Constructor, this is a method");
     }
 }
