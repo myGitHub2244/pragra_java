@@ -22,6 +22,10 @@ public class FileNotFoundExceptionDemo {
         Hence it mandates us to put the code in try-catch block as shown below
          */
 
+
+//  --------------------------------------------------------------------------------------------------------------------
+//        Note: to get a try-catch automatically, just type -> Scanner sc = new Scanner(file).try and press ENTER !!
+//  --------------------------------------------------------------------------------------------------------------------
         try {
             Scanner scanner = new Scanner(file);
             System.out.println("Statement after file operation");   //this is not printed incase of exception
