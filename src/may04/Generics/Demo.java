@@ -12,7 +12,7 @@ public class Demo {
         list.add(200);
         list.add(300);
         list.add(400);
-        list.add("Lovepreet");
+        list.add("Lovepreet");      //it allows to add String to List of Integers !! Hence, there is no type safety which is Issue
         list.add("Vasu");
         list.add("Prableen");
         list.add(23.44);
@@ -21,7 +21,7 @@ public class Demo {
 
 // use to enter salary
         // 10000, 20000, pragra
-        // Javascript ----> typescript
+        // Javascript ----> typescript      ---> Typescript checks type safety at compile time itself !
 
 
 

@@ -42,6 +42,10 @@ public class TryCatchBlock {
             System.out.println(e);
         }
 
+        finally {
+            System.out.println("Finally always print irrespective of any exception occurred or not");
+        }
+
         System.out.println("Result: "+result);      //Since Exception is handled above, code execution continues after catch block
         System.out.println("End of the result.."); //Since Exception is handled above, code execution continues after catch block
 
