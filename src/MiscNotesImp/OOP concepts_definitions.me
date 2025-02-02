@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------------------------------------------
+Inheritance
+---------------------------------------------------------------------------------------------------------------------
+Inheritance provides a way to create a new class from an existing class. The new class is a specialized version of the existing class such that it inherits all the non-private fields (variables) and methods of the existing class. The existing class is used as a starting point or as a base to create the new class.
+
+The IS A relationship
+After reading the above definition, the next question that comes to your mind is What is the use case of inheritance? Well, the answer is that wherever we come across an IS A relationship between objects, we can use inheritance.
+
+SuperClass (Parent Class or Base Class): This class allows the re-use of its non-private members in another class.
+SubClass (Child Class or Derived Class): This class is the one that inherits from the superclass.
+
+Note: A child class has all non-private characteristics of the parent class.
+
+What does a child class have?
+An object of the child class can use:
+All non-private members defined in the child class.
+All non-private members defined in the parent class.
+
+Note: Some classes cannot be inherited. Such classes are defined with the keyword, final. An example of such a class is the built-in Integer class - this class cannot have derived classes.
+
+Types of Inheritance
+----------------------
+Single
+Multi-level
+Hierarchical
+Multiple
+Hybrid
+
+
+---------------------------------------------------------------------------------------------------------------------
+Polymorphism
+---------------------------------------------------------------------------------------------------------------------
+The word Polymorphism is a combination of two Greek words, Poly means many and Morph means forms.
+
+
+---------------------------------------------------------------------------------------------------------------------
+Abstraction
+---------------------------------------------------------------------------------------------------------------------
+Abstraction in Object-Oriented Programming refers to showing only the essential features of an object to the user and hiding the
+inner details to reduce complexity. It can be put this way that the user only has to know
+
+Basically, by abstraction, it enforces the derived class to implement only the user-required function i.e. the abstract behaviour.
+All Other behaviour is not required to be implemented but the derived class automatically inherits via HAS-A
+
+In Java, we use the following components to achieve abstraction:
+    Abstract Classes
+    Interfaces
+
+
+A method with the keyword abstract in its declaration is known as an abstract method.
+
+public abstract void methodName(parameter(s));
+
+Rules to be followed
+-----------------------
+In contrast to a concrete/normal Java method an abstract method does not have a body/definition i.e. it only has a declaration or method signature inside an abstract class or an interface.
+An abstract method can be declared inside an abstract class or an interface only.
+In other words, it can be said that to contain any abstract method in its implementation a class has to be declared as an abstract class because non-abstract classes cannot have abstract methods.
+An abstract method cannot be declared private as it has to be implemented in some other class.
+
+Rules to be followed
+------------------------
+An abstract class cannot be instantiated i.e. one cannot create an object of an abstract class.
+An abstract class can have the declaration of abstract method(s) (as an abstract method’s body cannot be implemented in an abstract class) but it is not compulsory to have any.
+Non-abstract/normal methods can be implemented in an abstract class.
+To use an abstract class it needs to be inherited from.
+The class which inherits from the abstract class must implement all the abstract methods declared in the parent abstract class.
+An abstract class can have everything else as same as a normal Java class has i.e. constructor, static variables and methods.
+
+Consider modeling an Animal kingdom using Java having:
+A base abstract class named Animal
+A child class named Dog
+A child class named Cat
+A child class named Sheep
+
+---------------------------------------------------------------------------------------------------------------------
+Encapsulation
+---------------------------------------------------------------------------------------------------------------------
+Encapsulation in Java is a process of wrapping code and data together into a single unit
+We can create a fully encapsulated class in Java by making all the data members of the class private.
+
+By providing only a setter or getter method, you can make the class read-only or write-only. In other words, you can skip the getter or setter methods.
+It is a way to achieve data hiding in Java because other class will not be able to access the data through the private data members

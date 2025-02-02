@@ -1,0 +1,37 @@
+Important of INTERFACES / PARENT CLASS
+--------------------------------------
+
+All real-life instances for e.g. Car, Dog etc has a Parent Interface e.g. Vehicle, Animal.
+
+"IS-A"
+---------------------------
+Hence Car "IS-A" Vehicle. Dog IS-A Animal.
+
+"HAS-A"
+--------------------------
+Now, the Interface will have basic (public static final) attributes and (abstract) behavior which must be implemented by the Class derived from them for e.g.
+Vehicle -> hasWheels, batteryPower, hasSteering and methods ->  move(), start(), stop(), soundHorn() etc.
+Animal  -> numberLegs, isDomestic and methods -> makeSound(), run(), jump() etc.
+
+Hence, inorder to create a Car, it must have wheels and must start(), move(), stop(). Basically it must implement these abstract methods
+that were defined in the Interface Vehicle
+---------------------------------------------------------
+
+Concept of Interfaces is used in Collections for e.g. List (Interface) -> ArrayList (Class), LinkedList(Class)
+
+Hence, ArrayList must implement abstract methods of parent Interface List
+
+Also, with Collections we use UPCASTING: When an object of a Child class is referred to by a reference variable of the Parent class,
+this is referred to as upcasting
+
+Upcasting gives us the flexibility to access the parent class members using Child class objects.
+Also we can easily assign various child objects to the parent Reference at run-time and invoke corresponding child class
+implemented methods !!
+
+E.g.
+List list = new ArrayList();
+list.add();     //invokes "boolean Add(E e)" method implemented in ArrayList class
+
+list = new LinkedList();        -> we can easily assign various child objects to the parent Reference at run-time !!
+list.add();     //invokes "boolean Add(E e)" method implemented in LinkedList class
+

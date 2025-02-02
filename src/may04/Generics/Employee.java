@@ -1,5 +1,7 @@
 package may04.Generics;
 
+import java.util.ArrayList;
+
 public class Employee<T, R> {
 
     T id;
@@ -23,6 +25,7 @@ public class Employee<T, R> {
 class Main {
     public static void main(String[] args) {
 
+        //Use of Generics makes it Type safety at Compile-Time by limiting to Allowable data-type. Else using just Object type would make it less Type safety
         Employee<String, String> employee = new Employee<String, String>("101","Pragra");
         System.out.println(employee);       //this will call toString method to print the object.
 
