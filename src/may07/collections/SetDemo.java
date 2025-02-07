@@ -24,7 +24,7 @@ public class SetDemo {
 
         System.out.println(set);
 
-        //Set can be traversed using iterator and for-each loop
+        //Set can be traversed using "iterator" and "for-each" loop. Note: And Cannot use "for" loop because no index !
 
         //using iterator
         Iterator<Integer> iterator=set.iterator();

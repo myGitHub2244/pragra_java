@@ -1,0 +1,45 @@
+@FunctionalInterface
+public interface IAddOper {
+    int addNum(int a,int b);            --> Abstract class
+}
+
+
+public class AddOperLambda implements IAddOper{
+
+    @Override
+    public int addNum(int a, int b) {                   *** Override with concrete method
+        return a+b;
+    }
+
+    public int useLambda(IAddOper add2){
+        add2.addNum(3,4);
+    }
+
+    public static void main(String[] args) {
+
+        //Override using Anonymous Inner Class:
+        IAddOper add1=new IAddOper() {                  *** Override using Anonymous Inner Class
+            @Override
+            public int addNum(int a, int b) {
+                return a+b;
+            }
+        };
+
+        System.out.println("add1.addNum(2,3) = " + add1.addNum(2, 3));
+
+        //Override using Lambda Expression #1:
+        IAddOper add2=(a,b)->a+b;                       ******************* Lambda expression can be used instead of Inner Class
+        System.out.println("add2.addNum(3,4) = " + add2.addNum(3, 4));
+
+        //Pass Lambda expression as a function parameter:
+        AddOperLambda addOper = new AddOperLambda();
+        addOper.useLambda(add2);        ---> same as addOper.useLambda((a,b)->a+b);
+
+    }
+
+
+
+
+}
+
+

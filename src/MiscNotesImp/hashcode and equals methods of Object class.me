@@ -17,6 +17,19 @@
              Similarly, hashCode() method of the object class returns the memory reference of an object in integer form.
              Since 2 objects have 2 different memory location irrespective of their values, they have distinct hashcodes !
 
+    *** IT IS ADVISABLE TO OVERRIDE THE EQUALS() & HASHCODE() METHODS WHEN VALUE OBJECTS ARE INVOLVED AND NOT IDENTITY OBJECTS !!
+
+    For e.g. We retrieve all Student (key) and their marks (value) from Database and store in HashMap. Now we receive
+    request from Front-End to fetch marks for a Student. Now the Student key stored in HashMap and the Student received from
+    Front-end request are 2 different objects. They both will have their own hashcodes. But in order to search/locate a key-value in
+    the HashMap using key (Student) it must match the hashcode hence, it is necessary the front-end recvd Student object to search
+    HashMap stored Student object they both should have same hashcode and also return true for equals() method.
+    HENCE WE NEED TO OVERRIDE THE HASHCODE() METHOD so that a given Value of Object always returns same hashcode value even if 2
+    discrete objects. To achieve this we override the hashcode() method and use the first name and last name in hashcode computation
+    logic instead of native hashcode() which does not use object attributes to calc hashcode. So, now we will always get same hashcode everytime a new Student object
+    is created with same name and lastname. And we will be able to fetch the marks for the Student from HashMap table !
+    -----------------------------------------------------------------------------------------------------------------------------
+
     If we override the equals method (as in String class), to return true based on Object's values and not based on if it points
     to same object, which basically overrides to say 2 objects with equal values are also equal. In that case
     if we still use Object class native hashcode() method, then  it will return 2 hashcodes which means 2 objects

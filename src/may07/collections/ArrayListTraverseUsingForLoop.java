@@ -1,4 +1,4 @@
-package may07.collections.ListofObjects;
+package may07.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;

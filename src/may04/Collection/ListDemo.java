@@ -1,9 +1,6 @@
 package may04.Collection;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /*
 A List can contain duplicates, but a Set can’t
@@ -77,7 +74,6 @@ public class ListDemo {
         list4.addAll(list3);        //Add a ArrayList to a LinkedList !
         System.out.println("list4 = " + list4);
         System.out.println("list4.size() = " + list4.size());
-
     }
 
 

@@ -50,7 +50,7 @@ public class ConcurrentModificationExceptionDemo {
                 iterator1.remove();     //it removes last retrieved element !
             }
         }
-        System.out.println(list);
+        System.out.println(list);       //we can see '10' has been removed from original list
 
     }
 }

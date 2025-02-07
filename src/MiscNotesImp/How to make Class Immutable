@@ -23,3 +23,6 @@ Don’t provide setter methods for variables.
 Make all mutable fields final so that a field’s value can be assigned only once.
 Initialize all fields using a constructor method performing deep copy.
 Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference.
+
+
+Example: C:\Users\jaip2\IdeaProjects\Java_March_19_2024\src\may14\Hashcode\HashMapKeyMustBeImmutable.java
