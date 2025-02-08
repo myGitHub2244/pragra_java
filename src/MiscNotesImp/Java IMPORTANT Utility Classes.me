@@ -1,0 +1,60 @@
+Collections class (This is not same as "Collection" Class)
+------------------------------------------------------------------
+The Collections class in Java is a part of the Java Collections Framework, which provides various utility methods for working with
+collections (lists, sets, maps, etc.) in a more efficient and convenient way.
+It contains static methods for performing common operations on collections, such as sorting, searching, and synchronization.
+
+Java Collection class throws a NullPointerException if the collections or class objects provided to them are null.
+
+Sorting: The Collections.sort() method allows you to sort a list of elements in natural order or using a custom comparator.
+This is especially helpful when dealing with lists of objects that need to be ordered.
+
+Finding Minimum and Maximum: The Collections.min() and Collections.max() methods provide ways to find the minimum and maximum elements from a collection, respectively.
+
+Frequency of Elements: The Collections.frequency() method counts the occurrences of a specific element in a collection.
+
+Creating Immutable Collections: The Collections.unmodifiableCollection(), Collections.unmodifiableList(), etc.,
+methods generate unmodifiable views of collections, which can be useful to ensure data integrity and avoid unintended modifications.
+
+
+Arrays class (This is not same as ArrayList Class)
+-------------------------------------------------------
+Arrays is a class in the java.utils package that contains various methods for manipulating arrays (such as sorting and searching).
+This class also contains a static factory that allows arrays to be seen as a list.
+The methods in this class throw a NullPointerException if the specified array reference is null
+
+Integer[] array = {1,2,3,4,5,6};
+List<Integer> list = Arrays.aslist(array);
+
+
+Comparable Interface
+---------------------------
+It contains a method called
+compareTo(T o)
+
+-1 if obj1 is less than   obj2
+1 if  obj1 is greater than   obj2
+0 if  obj1 is equal to   obj2
+
+
+Comparator Interface
+---------------------------
+compare(T o1, T o2)
+
+
+Optional Class
+----------------------------
+What is an Optional?
+Java 8 has introduced a new class Optional<T> in the java.util package.
+The Optional<T> is a wrapper class that stores an object of type T. The object may or may not be present in the optional.
+According to Oracle, “Java 8 Optional works as a container type for the value which is probably absent or null.
+Java Optional is a final class present in the java.util package.”
+
+
+
+
+
+
+
+
+

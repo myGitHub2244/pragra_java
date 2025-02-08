@@ -1,5 +1,7 @@
 package april06.constructor;
 
+import java.sql.SQLOutput;
+
 public class MethodOverLoading {
 
 //    Method Overloading
@@ -42,6 +44,19 @@ public class MethodOverLoading {
         System.out.println(s.sum(10,20));
         System.out.println(s.sum(10,20,30));
         System.out.println(s.sum(10.5,20.5));
+    }
+
+//    public void main(String args[]){
+//        System.out.println("main method cannot be overloaded by removing static. Gives compile Error");
+//    }
+//
+//    public static String main(String args[]){
+//        System.out.println("main method cannot be overloaded by changing Return type. Gives compile Error");
+//        return args[0];
+//    }
+
+    public static void main(Integer args[]){
+        System.out.println("main method CAN be overloaded by changing parameter Type !!");
     }
 
 

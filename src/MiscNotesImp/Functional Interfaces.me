@@ -1,0 +1,65 @@
+object-oriented programming V/S functional programming
+------------------------------------------------------------
+In object-oriented programming, objects and classes are the main entities. If we create a function then it should exist within a class. A function has no meaning outside the scope of the class object.
+
+functional programming
+----------------------------
+In functional programming, functions can exist outside the scope of an object. We can assign them to a reference variable and we can also pass them to other methods as a parameter.
+
+A lambda expression is just an anonymous function, i.e., a function with no name and that is not bound to an identifier. We can pass it to other methods as parameters, therefore, using the power of functional programming in Java.
+
+
+Functional Interface
+----------------------------------------------------------------------------
+An interface with only one abstract method is called functional interface.
+
+Exactly One Abstract Method: A functional interface must have exactly one abstract method that defines its functional behavior
+
+Default Methods: Default methods are methods in an interface that have a default implementation
+
+Static Methods: Similarly, static methods can also be included in a functional interface without changing its functional characteristics. Static methods in interfaces are not inherited by implementing classes or interfaces.
+
+Purpose of @FunctionalInterface annotation
+--------------------------------------------
+Hence we annotate using @FunctionalInterface to ensure not more than 1 abstract method is allowed. Also it helps in ensuing
+ the corresponding Lambda expressions does not fail. Because Lambda expressions requires corresponding Interface must hv only 1 abstract
+                                                    ------------------------------------------------------------------------------------
+
+
+Consumers
+-----------------------------
+Consumers are functional interfaces that take in a parameter and do not produce anything.
+
+@FunctionalInterface
+public interface Consumer<T> {
+   void accept(T t);
+}
+
+
+Predicate
+--------------------------
+The Predicate<T> interface has an abstract method boolean test(T t). Basically, a predicate is a function that evaluates the given input and returns true or false.
+
+@FunctionalInterface
+public interface Predicate<T> {
+   boolean test(T t);
+}
+
+Supplier
+-----------------------------
+Supplier is an interface that does not take in any argument but produces a value when the get() function is invoked. Suppliers are useful when we don’t need to supply any value and obtain a result at the same time.
+@FunctionalInterface
+public interface Supplier<T> {
+   T get();
+}
+
+Function
+----------------------------------
+Function is a category of functional interfaces that takes an object of type T and returns an object of type R.
+Function interfaces are very useful as we can specify the type of input and output.
+
+@FunctionalInterface
+public interface Function<T, R> {
+   R apply(T t);
+}
+

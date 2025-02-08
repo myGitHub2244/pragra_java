@@ -1,3 +1,15 @@
+Lambda is equivalent to a function without a name
+Also referred as Anonymous functions.
+Lambdas are not tied to any class like a regular method
+Lambdas can also be assigned to variable and passed around.
+Mainly used to implement Functional Interfaces.
+
+A lambda expression is just an anonymous function, i.e., a function with no name and that is not bound to an identifier. We can pass it to other methods as parameters, therefore, using the power of functional programming in Java.
+
+    () -> { };
+Basically, () denotes method Input parameters and {} denotes method body ! And this expression is implementing a Functional Interface's abstract method !
+--------------------------------------------------------------------------
+
 @FunctionalInterface
 public interface IAddOper {
     int addNum(int a,int b);            --> Abstract class
@@ -11,9 +23,14 @@ public class AddOperLambda implements IAddOper{
         return a+b;
     }
 
-    public int useLambda(IAddOper add2){
-        add2.addNum(3,4);
+*** Basically, we want function useLambda to be executed with different implememtations. Hence we need the functions to exec
+    dynamically passed as a parameter by the caller. That way only 1 mthod useLambda can do different things:
+
+    public int useLambda(IAddOper add2){        //receives Lambda expression as parameter
+        add2.addNum(3,4);                       //call Lambda expression passed as parameter
     }
+
+
 
     public static void main(String[] args) {
 
@@ -34,6 +51,14 @@ public class AddOperLambda implements IAddOper{
         //Pass Lambda expression as a function parameter:
         AddOperLambda addOper = new AddOperLambda();
         addOper.useLambda(add2);        ---> same as addOper.useLambda((a,b)->a+b);
+
+
+
+        IAddOper add3=(a,b)->a-b;
+        //Pass Lambda expression as a function parameter:
+        addOper.useLambda(add3);        ---> call useLambda again this time using different function !!
+
+
 
     }
 
