@@ -24,14 +24,14 @@ public class NullWithoutOptionalClassDemo {
 
         NullWithoutOptionalClassDemo opt = NullWithoutOptionalClassDemo.getObject();
 
-        System.out.println("Object: "+opt);     //prints null
-//        System.out.println("firstName: "+opt.firstName);    //gives NullPointerException
+        System.out.println("Object: "+opt);     //prints null... does not give NullPointerException
+//        System.out.println("firstName: "+opt.firstName);    //gives NullPointerException when a null object is used to invoke a method
 
         //how to check null
-        if(Objects.nonNull(opt)){
+        if(Objects.nonNull(opt)){   //this is one way to prevent NullPointerException, by putting null object as parameter
             System.out.println("firstName: "+opt.firstName);
         }
-        if(null!=opt){
+        if(null!=opt){          //this is another way to prevent NullPointerException
             System.out.println("firstName: "+opt.firstName);
         }
 

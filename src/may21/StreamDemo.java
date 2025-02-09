@@ -57,7 +57,7 @@ public class StreamDemo {
         Stream.generate(()->Math.random()*100)
                 .limit(25)
                 .sorted((a,b)->b.intValue()-a.intValue())   //uses Comparator interface and implements compare(T o1, T o2) in Lambda
-                .mapToInt(a->a.intValue())
+                .mapToInt(a->a.intValue())  //converts the stream to Integer
                 .filter(n->n%3==0)
                 .forEach(n-> System.out.println(n));
 
@@ -69,9 +69,11 @@ public class StreamDemo {
         Stream.of(names).forEach(n-> System.out.println(n));
         names.stream().forEach(n-> System.out.println(n));
 
+        //Now to sort a Stream of Strings, we cannot use Comparator (a,b)-> a-b but need to use Comparable interface compareTo Lambda
         System.out.println("Print Array of String in Descending Order using Comparable method compareTo");
         names.stream()
                 .sorted((a,b)->b.compareTo(a))  //uses and implements Comparable interface compareTo method using Lambda expression
+            //  .sorted(Comparator.reverseOrder())  //this will also work to sort in descending order !
                 .forEach(System.out::println);
 
         System.out.println("Print Array of String removing duplicates using distinct()");
@@ -87,7 +89,7 @@ public class StreamDemo {
         System.out.println("Math operation: " +list1.stream()
                 .filter(n->n%2==0)
                 .reduce(0,(sum,nextInt)->sum+nextInt));     //0+22+44+55.... -> performs math operation and gives 1 output
-
+                                                                    //reduce is a terminal operation !!
     }
 
 }

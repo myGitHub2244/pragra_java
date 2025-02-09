@@ -1,6 +1,7 @@
 package may21.flatMapDemo;
 
 import java.util.List;
+import java.util.Optional;
 
 public class StudentMain {
 
@@ -20,6 +21,16 @@ public class StudentMain {
                 .filter(s->s.getFirstName().startsWith("J"))
                 .flatMap(s->s.getCourses().stream())
                 .forEach(System.out::println);
+
+
+        //Demonstrate use of Optional via findAny !
+        Optional<String> j = stu.stream()
+                .filter(s -> s.getFirstName().startsWith("J"))
+                .flatMap(s -> s.getCourses().stream())
+                .filter(c -> c.length() > 10)       //there are no course names with length > 10, so this returns null
+                .findAny();//makes use of Optional class and handles null gracefully !
+
+        System.out.println("j = " + j);
 
     }
 }

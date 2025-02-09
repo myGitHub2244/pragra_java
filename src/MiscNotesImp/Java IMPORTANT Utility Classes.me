@@ -1,3 +1,39 @@
+Most of Java utility classes are under java.util package.
+Many Other third-party custom utility are provided by Apache library
+
+Objects Class (this is not same as "Object" Class)
+---------------------------------------------------------
+This class consists of static utility methods for operating on objects. These utilities include null-safe or null-tolerant methods
+for computing the hash code of an object, returning a string for an object, and comparing two objects.
+
+static <T> int	compare(T a, T b, Comparator<? super T> c)
+Returns 0 if the arguments are identical and c.compare(a, b) otherwise.
+
+static boolean	deepEquals(Object a, Object b)
+Returns true if the arguments are deeply equal to each other and false otherwise.
+
+static boolean	equals(Object a, Object b)
+Returns true if the arguments are equal to each other and false otherwise.
+
+static int	hash(Object... values)
+Generates a hash code for a sequence of input values.
+
+static int	hashCode(Object o)
+Returns the hash code of a non-null argument and 0 for a null argument.
+
+static boolean	isNull(Object obj)
+Returns true if the provided reference is null otherwise returns false.
+
+static boolean	nonNull(Object obj)
+Returns true if the provided reference is non-null otherwise returns false.
+
+static String	toString(Object o)
+Returns the result of calling toString for a non-null argument and "null" for a null argument.
+
+
+
+
+
 Collections class (This is not same as "Collection" Class)
 ------------------------------------------------------------------
 The Collections class in Java is a part of the Java Collections Framework, which provides various utility methods for working with
@@ -49,6 +85,10 @@ Java 8 has introduced a new class Optional<T> in the java.util package.
 The Optional<T> is a wrapper class that stores an object of type T. The object may or may not be present in the optional.
 According to Oracle, “Java 8 Optional works as a container type for the value which is probably absent or null.
 Java Optional is a final class present in the java.util package.”
+
+Optional.of(student)
+Optional.ofNullable(student)
+
 
 
 
