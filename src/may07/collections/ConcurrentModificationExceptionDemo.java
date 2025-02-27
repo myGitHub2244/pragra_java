@@ -31,7 +31,7 @@ public class ConcurrentModificationExceptionDemo {
         while (iterator.hasNext()){
             Integer next=iterator.next();
             System.out.println(next);
-//            iterator.remove();        //Causes java.util.ConcurrentModificationException
+            iterator.remove();        //Does not cause java.util.ConcurrentModificationException
         }
 
         list.add(40);
@@ -45,7 +45,7 @@ public class ConcurrentModificationExceptionDemo {
 
         while (iterator1.hasNext()){
             Integer next = iterator1.next();
-            if(next == 10) {
+            if(next == 40) {
 //              list.remove(new Integer(10));   // List's remove() gives ConcurrentModificationException hence use iterator's remove method as below
                 iterator1.remove();     //it removes last retrieved element !
             }

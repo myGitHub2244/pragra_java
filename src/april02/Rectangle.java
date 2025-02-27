@@ -28,17 +28,22 @@ public class Rectangle {
 //Object's attributes length and width are not set until we set them. Below example shows values are still Default
         double area1=rec.getArea1(2,4);
         System.out.println("Area of Rectangle: "+area1);
+        rec.setSide(2,4);
         System.out.println("Length: "+rec.length);  //proves objects attributes are not set. Hence returns 0
         System.out.println("Width: "+rec.width);  //proves objects attributes are not set. Hence returns 0
 
+        double circumference=rec.getCircumference();
+        System.out.println("Perimeter of Rectangle: "+circumference);
+
+        System.out.println();
 
 //Object's attributes has to be explicity set : length and width
         rec.setSide(5,10);
         double area=rec.getArea();
         System.out.println("Area of Rectangle: "+area);
 
-        double circumference=rec.getCircumference();
-        System.out.println("Circumference of Rectangle: "+circumference);
+        circumference=rec.getCircumference();
+        System.out.println("Perimeter of Rectangle: "+circumference);
 
 
 

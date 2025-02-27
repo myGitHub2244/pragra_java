@@ -31,7 +31,7 @@ public class IteratorDemo {
         while (iterator.hasNext()){
             Integer next=iterator.next();
             System.out.println(next);
-//            iterator.remove();        //Causes java.util.ConcurrentModificationException
+            iterator.remove();        //Does not causes java.util.ConcurrentModificationException
         }
 
         list.add(40);
